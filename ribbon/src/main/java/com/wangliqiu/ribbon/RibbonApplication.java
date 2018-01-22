@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * 向服务中心注册
+ * 向服务中心获取服务信息
  */
 @EnableDiscoveryClient
 @SpringBootApplication

@@ -17,7 +17,7 @@ public class OhController {
 
 	@RequestMapping("/hi")
 	public String hi(@RequestParam String name) {
-		return "hi " + name + ",i am from port:" + port;
+		return "oh " + name + ",i am from port:" + port;
 	}
 
 }

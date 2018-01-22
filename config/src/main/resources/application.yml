@@ -8,12 +8,10 @@ spring:
       server:
         git:
           uri: https://github.com/centifocus/spring-cloud-demo
-          searchPaths: .config-respo          # git path
-          default-label: master               # branch
-          username: centifocus
-          password: misaki2850
+          searchPaths: .config-respo          # git repository path
+          default-label: master               # /{application}/{profile}[/{label}] 若label没有，则采用这里的值
+          username:
+          password:
 
-
-spring:
   application:
     name: config

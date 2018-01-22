@@ -1,0 +1,11 @@
+server:
+  port: 8763
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/    # eureka server url to communicate
+
+spring:
+  application:
+    name: service-hi    # 与 service-hi 相同，来测负载均衡

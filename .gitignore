@@ -24,6 +24,8 @@ hs_err_pid*
 # IntelliJ project files
 .idea/
 .mvn/
+*.iws
+*.ipr
 *.iml
 *.class
 *.classpath

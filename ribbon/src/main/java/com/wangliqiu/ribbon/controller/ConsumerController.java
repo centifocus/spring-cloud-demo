@@ -5,6 +5,8 @@ import com.wangliqiu.ribbon.service.FeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
+
 @RestController
 public class ConsumerController {
 
@@ -21,8 +23,8 @@ public class ConsumerController {
 	}
 
 
-	@Autowired
-	FeignService feignService;
+	@Resource(name = "service-hi")
+	private FeignService feignService;
 
 
 	@GetMapping("/hi-feign")

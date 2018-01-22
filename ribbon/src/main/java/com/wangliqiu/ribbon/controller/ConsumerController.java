@@ -15,7 +15,7 @@ public class ConsumerController {
 	/**
 	 * 交替显示 port:8762 、 port:8763 ，说明已经做了负载均衡。
 	 */
-	@GetMapping("/hi")
+	@GetMapping("/hi-ribbon")
 	public String hiRibbon(@RequestParam String name) {
 		return helloService.hiService(name);
 	}
@@ -24,8 +24,9 @@ public class ConsumerController {
 	@Autowired
 	FeignService feignService;
 
-	@GetMapping( "/hi")
-	public String hiFeign(@RequestParam String name){
+
+	@GetMapping("/hi-feign")
+	public String hiFeign(@RequestParam String name) {
 		return feignService.hi(name);
 	}
 

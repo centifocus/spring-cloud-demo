@@ -8,9 +8,12 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/    # eureka server url to communicate
 
+# 刷新时，关闭安全验证
+management:
+  security:
+    enabled: false
+
 spring:
-  # bus 方式  # post请求：http://localhost:8762/bus/refresh  会重载配置
-  # /bus/refresh?destination=customers:** 即刷新服务名为customers的所有服务
   rabbitmq:
     virtual-host: /DEV
     username: admin
@@ -19,6 +22,10 @@ spring:
     port: 5672
 
   cloud:
+    bus:
+      trace:
+        enabled: true
+
     config:
       label: master
       profile: DEV
@@ -29,5 +36,7 @@ spring:
 
   application:
     name: service-hi
+
+
 
 

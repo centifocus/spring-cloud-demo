@@ -1,0 +1,21 @@
+server:
+  port: 9903
+
+
+eureka:
+  instance:
+    hostname: dns3
+    preferIpAddress: true
+
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://dns1:9901/eureka/, http://dns2:9902/eureka/
+
+
+# hosts中加 127.0.0.1 dns3
+spring:
+  profiles:
+    active: dns3
+#    include: dns3

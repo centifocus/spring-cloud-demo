@@ -4,8 +4,6 @@ server:
 
 eureka:
   client:
-    registerWithEureka: true  # omit
-    fetchRegistry: true       # omit
     serviceUrl:
       defaultZone: http://dns1:9901/eureka/    # eureka server url to communicate
 

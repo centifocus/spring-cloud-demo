@@ -34,8 +34,12 @@ spring:
         enabled: true
         service-id: config
 
+  zipkin:
+    base-url: http://localhost:9411
+
   application:
     name: service-hi
+
 
 
 

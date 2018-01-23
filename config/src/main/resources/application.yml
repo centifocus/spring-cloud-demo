@@ -6,6 +6,7 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/    # eureka server url to communicate
 
+# spring-boot-starter-actuator
 management:
   security:
      enabled: false
@@ -13,8 +14,9 @@ management:
 spring:
   # bus 方式
   # 启动时日志：Mapped "{[/bus/refresh],methods=[POST]}"
-  # post请求：http://localhost:8762/bus/refresh  会重载配置
-  # /bus/refresh?destination=customers:** 即刷新服务名为customers的所有服务
+  # post请求：http://localhost:8762/bus/refresh 导致config server发RefreshRemoteApplicationEvent事件到Bus，Bus再广播业务服务节点。
+  # /bus/refresh?destination=customers:** 即刷新customers的所有服务
+  # 可以添加@EventListener注解的AckRemoteApplicationEvent和SentApplicationEvent类型到你自己的应用中。
   rabbitmq:
     virtual-host: /DEV
     username: admin
@@ -22,7 +24,14 @@ spring:
     host: 10.10.110.49
     port: 5672
 
+
   cloud:
+    # RemoteApplicationEvent的子类都是总线事件
+    # /bus/refresh端点被请求后，访问/trace端点就可获得trace结果
+    bus:
+      trace:
+        enabled: true
+
     config:
       server:
         git:

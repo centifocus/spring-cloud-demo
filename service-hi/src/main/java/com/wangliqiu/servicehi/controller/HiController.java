@@ -1,6 +1,7 @@
 package com.wangliqiu.servicehi.controller;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,20 +11,19 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 // RefreshRemoteApplicationEvent 会触发HiController新实例
-//@RefreshScope  // todo 报错了？？？
+@RefreshScope  // todo 报错了？？？
 public class HiController {
 
 	@Value("${server.port}")
 	String port;
 
-	// todo 报错了？？？
 	/* 从配置中心获取 */
-//	@Value("${foo}")
-//	String foo;
+	@Value("${foo}")
+	String foo;
 
 
 	@RequestMapping("/hi")
-	public String hi(@RequestParam String name, @Value("${foo}") String foo) {
+	public String hi(@RequestParam String name) {
 		return "hi " + name + ": " + port + " -> " + foo;
 	}
 

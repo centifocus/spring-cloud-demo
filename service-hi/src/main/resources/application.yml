@@ -28,12 +28,15 @@ spring:
         enabled: true
 
     config:
+      fail-fast: true
       label: master
       profile: DEV
       # uri: http://localhost:8888/         # config server uri   # 不直连的话，从eureka来路由到config server
       discovery:
         enabled: true
         service-id: config
+
+
 
   zipkin:
     base-url: http://localhost:9951

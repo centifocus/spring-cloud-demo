@@ -7,7 +7,7 @@ server:
 eureka:
   instance:
     hostname: dns1
-#    preferIpAddress: true     # 让client端发现服务的地址是ip而不是dns，从而避免可能的client本地系统的hosts设置
+    preferIpAddress: true     # 让client端发现服务的地址是ip而不是dns，从而避免可能的client本地系统的hosts设置
 
   client:
     registerWithEureka: true  # omit

@@ -1,5 +1,5 @@
 server:
-  port: 9911
+  port: 8888    # 不能改，因为client端没法改配置端口，一直都是8888
 
 
 eureka:
@@ -36,12 +36,14 @@ spring:
 
     config:
       server:
+        default-profile: DEV
         git:
           uri: https://github.com/centifocus/spring-cloud-demo
           searchPaths: .config-repo          # git repository path
-          default-label: master               # /{application}/{profile}[/{label}] 如果label没有，则采用default-label          username:
+          default-label: master               # /{application}/{profile}[/{label}] 如果label没有，则采用default-label
           username:
           password:
+
 
   application:
     name: config

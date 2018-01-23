@@ -5,7 +5,7 @@ server:
 eureka:
   instance:
     hostname: dns3
-#    preferIpAddress: true
+    preferIpAddress: true
 
   client:
     serviceUrl:

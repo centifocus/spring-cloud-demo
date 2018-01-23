@@ -16,7 +16,7 @@ public class HiController {
 
 
 	@RequestMapping("/hi")
-	public String hi(@RequestParam String name, @Value("${foo}") String foo) {
+	public String hi(@RequestParam String name, /* 从配置中心获取 */ @Value("${foo}") String foo) {
 		return "hi " + name + ": " + port + " -> " + foo;
 	}
 

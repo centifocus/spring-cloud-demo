@@ -1,6 +1,10 @@
 server:
   port: 8888
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/    # eureka server url to communicate
 
 spring:
   cloud:
@@ -9,9 +13,10 @@ spring:
         git:
           uri: https://github.com/centifocus/spring-cloud-demo
           searchPaths: .config-respo          # git repository path
-          default-label: master               # /{application}/{profile}[/{label}] 若label没有，则采用这里的值
+          default-label: master               # /{application}/{profile}[/{label}] 濡傛灉label娌℃湁锛屽垯閲囩敤default-label          username:
           username:
           password:
 
   application:
     name: config
+

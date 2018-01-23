@@ -13,7 +13,10 @@ spring:
     config:
       label: master
       profile: DEV
-      uri: http://localhost:8888/         # config server uri
+      # uri: http://localhost:8888/         # config server uri   # 不直连的话，从eureka来路由到config server
+      discovery:
+        enabled: true
+        service-id: config
 
   application:
     name: service-hi

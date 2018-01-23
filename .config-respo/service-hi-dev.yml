@@ -1,0 +1,3 @@
+# 文件命名 {application}-{profile}.yml
+
+foo: this is foo dev

@@ -9,5 +9,11 @@ eureka:
       defaultZone: http://localhost:8761/eureka/    # eureka server url to communicate
 
 spring:
+  cloud:
+    config:
+      label: master
+      profile: DEV
+      uri: http://localhost:8888/         # config server uri
+
   application:
     name: service-hi

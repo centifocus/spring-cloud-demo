@@ -16,8 +16,8 @@ public class HiController {
 
 
 	@RequestMapping("/hi")
-	public String hi(@RequestParam String name) {
-		return "hi " + name + ",i am from port:" + port;
+	public String hi(@RequestParam String name, @Value("${foo}") String foo) {
+		return "hi " + name + ": " + port + " -> " + foo;
 	}
 
 }

@@ -1,15 +1,18 @@
 server:
   port: 8888
 
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/    # eureka server url to communicate
 
+
 # spring-boot-starter-actuator
 management:
   security:
      enabled: false
+
 
 spring:
   # bus 方式
@@ -23,7 +26,6 @@ spring:
     password: adminjoindata123
     host: 10.10.110.49
     port: 5672
-
 
   cloud:
     # RemoteApplicationEvent的子类都是总线事件

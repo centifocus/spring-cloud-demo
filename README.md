@@ -1,2 +1,8 @@
 # spring-cloud-demo
-spring-cloud-demo
+
+9900: 注册中心
+9910: 配置中心
+9920: 网关
+9930: 服务消费端
+9940: 服务提供端
+9950: trace 

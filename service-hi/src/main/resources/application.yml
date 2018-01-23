@@ -1,6 +1,7 @@
 server:
   port: 8762
 
+
 eureka:
   client:
     registerWithEureka: true  # omit
@@ -8,10 +9,12 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/    # eureka server url to communicate
 
+
 # 刷新时，关闭安全验证
 management:
   security:
     enabled: false
+
 
 spring:
   rabbitmq:

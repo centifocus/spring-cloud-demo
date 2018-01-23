@@ -1,10 +1,10 @@
 server:
-  port: 8769
+  port: 9921
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://dns1:9901/eureka/
 
 zuul:
   routes:

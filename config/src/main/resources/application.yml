@@ -1,11 +1,11 @@
 server:
-  port: 8888
+  port: 9911
 
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/    # eureka server url to communicate
+      defaultZone: http://dns1:9901/eureka/    # eureka server url to communicate
 
 
 # spring-boot-starter-actuator

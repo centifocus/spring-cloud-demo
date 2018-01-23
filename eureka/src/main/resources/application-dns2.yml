@@ -4,7 +4,7 @@ server:
 
 eureka:
   instance:
-    hostname: dns1
+    hostname: dns2
   client:
     registerWithEureka: false
     fetchRegistry: false
@@ -15,4 +15,4 @@ eureka:
 # hosts中加 127.0.0.1 dns2
 spring:
   profiles:
-    include: dns1
+    include: dns2

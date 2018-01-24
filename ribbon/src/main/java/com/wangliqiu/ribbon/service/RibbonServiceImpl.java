@@ -14,7 +14,7 @@ public class RibbonServiceImpl {
 	@Autowired
 	RestTemplate restTemplate;
 
-
+	// Hystrix timeout must be longer than Ribbon timeout, including any potential retries that might be made.
 	@HystrixCommand(fallbackMethod = "fallback")
 	public String hiService(String name) {
 		// 直接用的应用名替代了具体的uri地址，在ribbon中它会根据服务名来选择具体的服务实例，根据服务实例在请求的时候会用具体的url替换掉服务名。

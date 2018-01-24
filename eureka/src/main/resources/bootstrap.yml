@@ -21,7 +21,9 @@ eureka:
 
 
   client:
-    registerWithEureka: true  # omit  # 为了eureka控制台available-replicas
+    # 是否将自己作为客户端注册到注册中心   # 为了eureka控制台available-replicas
+    registerWithEureka: true  # omit
+    # 是否从注册中心获取注册信息
     fetchRegistry: true       # omit
     # how often(in seconds) to fetch the registry information from the eureka server
     registry-fetch-interval-seconds: 5

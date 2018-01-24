@@ -1,6 +1,11 @@
 server:
   port: 9931
 
+#
+management:
+  security:
+    enabled: false
+
 
 eureka:
   instance:
@@ -10,7 +15,6 @@ eureka:
     preferSameZoneEureka: true
     serviceUrl:
       defaultZone: http://dns1:9901/eureka/
-
 
 
 spring:

@@ -3,7 +3,12 @@ server:
 
 
 eureka:
+  instance:
+    preferIpAddress: true
+    lease-expiration-duration-in-seconds: 10
+    lease-renewal-interval-in-seconds: 5
   client:
+    registry-fetch-interval-seconds: 5
     service-url:
       defaultZone: http://dns1:9901/eureka/    # eureka server url to communicate
 

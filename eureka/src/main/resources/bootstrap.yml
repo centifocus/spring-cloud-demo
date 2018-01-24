@@ -1,0 +1,31 @@
+
+
+
+eureka:
+  server:
+    # 即当网络分区故障发生时（短时间内丢失过多客户端）这个server节点就会进入自我保护模式，不会摘除故障节点。当网络故障恢复后，Server节点会自动退出自我保护模式。
+    # 为了测试，这里false
+    enable-self-preservation: false
+    # eviction task 执行间隔
+    eviction-interval-timer-in-ms: 5000
+
+  # 注意：eureka server是以每个service-id的配置（eureka client发给server的metadata）来设置怎样与该服务交互。
+  instance:
+    # 默认为 ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    preferIpAddress: true
+    # 距离上次heartbeats的时间，超过该时间则判定失效，必须大于lease-renewal-interval-in-seconds
+    lease-expiration-duration-in-seconds: 10
+    # 发送heartbeats间隔
+    lease-renewal-interval-in-seconds: 5
+
+
+  client:
+    registerWithEureka: true  # omit  # 为了eureka控制台available-replicas
+    fetchRegistry: true       # omit
+    # how often(in seconds) to fetch the registry information from the eureka server
+    registry-fetch-interval-seconds: 5
+
+
+
+

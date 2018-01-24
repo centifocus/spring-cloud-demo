@@ -28,6 +28,7 @@ public class RibbonApplication {
 	// 表明这个RestTemplate会采用Ribbon
 	@LoadBalanced
 	RestTemplate restTemplate() {
+		// 可以用Okhttp
 		return new RestTemplate();
 	}
 

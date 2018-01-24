@@ -3,7 +3,13 @@ server:
 
 
 eureka:
+  instance:
+    metadataMap:
+      zone: zone1
+    # 默认为${spring.cloud.client.hostname}:${spring.application.name}:${server.port}
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${server.port}:wangliqiu
   client:
+    preferSameZoneEureka: true
     serviceUrl:
       defaultZone: http://dns1:9901/eureka/    # eureka server url to communicate
 

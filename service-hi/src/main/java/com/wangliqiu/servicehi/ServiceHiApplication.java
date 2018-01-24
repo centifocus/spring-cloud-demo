@@ -10,8 +10,10 @@ import org.springframework.context.annotation.Bean;
  * Actuator Endpoint: /service-registry/instance-status via a GET will return the status of the Registration
  */
 
-/* 当EurekaClient向EurekaServer注册时，它会提供一些元数据，例如主机和端口，URL，主页等。Eureka server 从每个client实例接收心跳消息。
-  如果心跳超时，则通常将该实例从注册server中删除。 */
+// When a client registers with Eureka, it provides meta-data about itself such as host and port, health indicator URL, home page etc.
+// If the heartbeat fails over a configurable timetable, the instance is normally removed from the registry.
+// By default, EurekaClient uses Jersey for HTTP communication. If you don't want Jersey, you can exclude it from your dependencies
+// EurekaClient have an in-memory cache of eureka registrations，这样不用每次请求都走注册中心拉信息。
 @EnableEurekaClient
 /* it is no longer required. It is enough to just have a DiscoveryClient implementation on the classpath to
  cause the Spring Boot application to register with the service discovery server. */

@@ -3,16 +3,24 @@ server:
 
 
 eureka:
+  instance:
+    metadata-map:
+      zone: zone1
   client:
+    preferSameZoneEureka: true
     serviceUrl:
       defaultZone: http://dns1:9901/eureka/
 
-client:
-  ribbon:
-    MaxAutoRetries: 1
+
 
 spring:
   cloud:
+    inetutils:
+      # 过滤docker的虚拟ip
+      ignoredInterfaces:
+        - docker0
+        - veth.*
+
     loadbalancer:
       retry:
         enabled: true

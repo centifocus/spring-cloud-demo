@@ -10,16 +10,16 @@ eureka:
 #    preferIpAddress: true     # 让client端发现服务的地址是ip而不是dns，从而避免可能的client本地系统的hosts设置
 
   client:
-    registerWithEureka: true  # omit
-    fetchRegistry: false       # omit
+    registerWithEureka: true  # omit  # 为了eureka控制台available-replicas
+    fetchRegistry: true       # omit
     serviceUrl:
     # 一个Region可以包含多个Zone
     # Eureka Client也需要指定Zone, Client在向Server获取注册列表时会优先向自己Zone的Eureka发请求，如果自己Zone中的Eureka全挂了才会尝试向其它Zone
 #      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       defaultZone: http://dns2:9902/eureka/,http://dns3:9903/eureka/
 #      region: wangliqiu-region
-#      prefer-same-zone-eureka: true
-#      availability-zones: wangliqiu-zone
+    prefer-same-zone-eureka: true
+#      availability-zones: zone1
 
 
 # hosts中加 127.0.0.1 dns1, command line加入：--spring.profiles.active=dns1

@@ -7,8 +7,16 @@ eureka:
     serviceUrl:
       defaultZone: http://dns1:9901/eureka/
 
+client:
+  ribbon:
+    MaxAutoRetries: 1
 
 spring:
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+
   zipkin:
     base-url: http://localhost:9951       # zipkin 控制台
 

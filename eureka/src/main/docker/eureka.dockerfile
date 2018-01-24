@@ -13,8 +13,8 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/eureka.jar
 # 为Docker容器设置对外的端口号
 EXPOSE 9901
 
-
-
+# 安装docker
+# https://docs.docker.com/engine/installation/linux/docker-ce/centos/
 
 
 

@@ -1,5 +1,5 @@
 # application-${profile}.yml
-
+---
 server:
   port: 9901
 
@@ -7,11 +7,11 @@ server:
 eureka:
   instance:
     hostname: dns1
-    preferIpAddress: true     # 让client端发现服务的地址是ip而不是dns，从而避免可能的client本地系统的hosts设置
+#    preferIpAddress: true     # 让client端发现服务的地址是ip而不是dns，从而避免可能的client本地系统的hosts设置
 
   client:
     registerWithEureka: true  # omit
-    fetchRegistry: true       # omit
+    fetchRegistry: false       # omit
     serviceUrl:
     # 一个Region可以包含多个Zone
     # Eureka Client也需要指定Zone, Client在向Server获取注册列表时会优先向自己Zone的Eureka发请求，如果自己Zone中的Eureka全挂了才会尝试向其它Zone
@@ -30,3 +30,7 @@ spring:
 
   application:
     name: eureka
+
+
+
+...

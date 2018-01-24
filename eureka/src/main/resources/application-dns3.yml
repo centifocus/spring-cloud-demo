@@ -5,9 +5,11 @@ server:
 eureka:
   instance:
     hostname: dns3
-    preferIpAddress: true
+#    preferIpAddress: true
 
   client:
+    registerWithEureka: true  # omit
+    fetchRegistry: false       # omit
     serviceUrl:
       defaultZone: http://dns1:9901/eureka/,http://dns2:9902/eureka/
 

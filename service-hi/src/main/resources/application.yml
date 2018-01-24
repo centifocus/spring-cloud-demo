@@ -27,6 +27,8 @@ spring:
       trace:
         enabled: true
 
+
+
     config:
       fail-fast: true
       label: master

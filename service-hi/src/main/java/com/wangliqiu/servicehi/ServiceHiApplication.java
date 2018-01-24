@@ -11,6 +11,11 @@ import org.springframework.context.annotation.Bean;
  * 如果心跳超时，则通常将该实例从注册server中删除。
  */
 @EnableEurekaClient
+/* it is no longer required. It is enough to just have a DiscoveryClient implementation on the classpath to
+ cause the Spring Boot application to register with the service discovery server. */
+/* This looks for implementations of the DiscoveryClient interface via META-INF/spring.factories. Implementations of Discovery Client
+will add a configuration class to spring.factories under the org.springframework.cloud.client.discovery.EnableDiscoveryClient key. */
+// @EnableDiscoveryClient
 @SpringBootApplication
 public class ServiceHiApplication {
 

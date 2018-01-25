@@ -1,5 +1,5 @@
 server:
-  port: 9952
+  port: 9949
 
 eureka:
   client:
@@ -8,4 +8,4 @@ eureka:
 
 spring:
   application:
-    name: service-hi    # 与 service-hi 相同，来测负载均衡
+    name: service-oh

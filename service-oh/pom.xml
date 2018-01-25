@@ -8,7 +8,7 @@
     <packaging>jar</packaging>
 
     <name>service-oh</name>
-    <description>服务提供者</description>
+    <description>服务提供者-oh</description>
 
     <parent>
         <groupId>com.wangliqiu</groupId>
@@ -25,7 +25,21 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-netflix-eureka-server</artifactId>
         </dependency>
-
+        <!-- event bus -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+        <!-- monitor -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+        </dependency>
+        <!-- trace -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
 
     </dependencies>
 

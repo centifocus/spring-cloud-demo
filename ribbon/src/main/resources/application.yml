@@ -18,9 +18,7 @@ eureka:
 
 
 # HystrixFeignConfiguration中需要该属性才启用HystrixFeign来包装feign接口的方法到hystrixCommand
-feign:
-  hystrix:
-    enabled: true
+feign.hystrix.enabled: true
 
 
 spring:

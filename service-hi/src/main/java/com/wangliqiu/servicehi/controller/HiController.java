@@ -1,5 +1,6 @@
 package com.wangliqiu.servicehi.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -24,9 +25,15 @@ public class HiController {
 	String foo;
 
 
+	@HystrixCommand(fallbackMethod = "fallback")
 	@RequestMapping("/hi")
 	public String hi(@RequestParam String name) {
 		return "hi " + name + ": " + port + " -> " + foo;
+	}
+
+
+	public String fallback() {
+		return "service-hi:" + port + " fallback!";
 	}
 
 }

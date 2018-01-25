@@ -1,24 +1,23 @@
-server:
-  port: 9941
+
+# 关闭安全验证
+management:
+  security:
+    enabled: false
 
 
 eureka:
+  # 注意：eureka server是以每个service-id的配置（eureka client发给server的metadata）来设置怎样与该服务交互。
   instance:
     preferIpAddress: true
     lease-expiration-duration-in-seconds: 10
     lease-renewal-interval-in-seconds: 5
     metadataMap:
       zone: zone1
+
   client:
     registry-fetch-interval-seconds: 5
     serviceUrl:
       defaultZone: http://dns1:9901/eureka/    # eureka server url to communicate
-
-
-# 刷新时，关闭安全验证
-management:
-  security:
-    enabled: false
 
 
 spring:
@@ -34,8 +33,6 @@ spring:
       trace:
         enabled: true
 
-
-
     config:
       fail-fast: true
       label: master
@@ -45,15 +42,5 @@ spring:
         enabled: true
         service-id: config
 
-
-
   zipkin:
     base-url: http://localhost:9951
-
-  application:
-    name: service-hi
-
-
-
-
-

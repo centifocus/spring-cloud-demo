@@ -1,0 +1,12 @@
+server:
+  port: 9941
+
+
+spring:
+  application:
+    name: service-hi
+
+
+
+
+

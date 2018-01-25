@@ -21,9 +21,10 @@ public class FeignApplication {
 		SpringApplication.run(FeignApplication.class, args);
 	}
 
+
 	// 采样器，这里用总是采样
 	@Bean
-	public AlwaysSampler defaultSampler(){
+	public AlwaysSampler defaultSampler() {
 		return new AlwaysSampler();
 	}
 

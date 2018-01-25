@@ -14,6 +14,7 @@ public class RibbonServiceImpl {
 	@Autowired
 	RestTemplate restTemplate;
 
+
 	// Hystrix timeout must be longer than Ribbon timeout, including any potential retries that might be made.
 	@HystrixCommand(fallbackMethod = "fallback")
 	public String hiService(String name) {

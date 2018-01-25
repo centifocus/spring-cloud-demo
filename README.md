@@ -6,6 +6,7 @@
 9930: 服务消费端
 9940: 服务提供端
 9950: trace 
+9960: hystrix monitor
 
 
 

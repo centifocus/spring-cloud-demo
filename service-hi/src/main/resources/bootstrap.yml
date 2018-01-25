@@ -11,8 +11,9 @@ eureka:
     preferIpAddress: true
     lease-expiration-duration-in-seconds: 10
     lease-renewal-interval-in-seconds: 5
-    metadataMap:
+    metadata-map:
       zone: zone1
+      cluster: cluster1
 
   client:
     registry-fetch-interval-seconds: 5

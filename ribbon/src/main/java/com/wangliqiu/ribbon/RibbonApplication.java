@@ -21,6 +21,7 @@ public class RibbonApplication {
 		SpringApplication.run(RibbonApplication.class, args);
 	}
 
+
 	@Bean
 	// 表明这个RestTemplate会采用Ribbon
 	@LoadBalanced

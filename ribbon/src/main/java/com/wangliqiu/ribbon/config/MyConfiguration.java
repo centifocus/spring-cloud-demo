@@ -31,10 +31,12 @@ public class MyConfiguration {
 						return true;
 					}
 
+
 					// Called after the final attempt (successful or not). 比如可以关闭资源
 					public <T, E extends Throwable> void close(RetryContext context, RetryCallback<T, E> callback, Throwable throwable) {
 						//TODO Do you business...
 					}
+
 
 					// Called after every unsuccessful attempt at a retry.
 					public <T, E extends Throwable> void onError(RetryContext context, RetryCallback<T, E> callback, Throwable throwable) {

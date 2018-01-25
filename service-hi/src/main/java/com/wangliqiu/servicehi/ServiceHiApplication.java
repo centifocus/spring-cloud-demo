@@ -3,6 +3,7 @@ package com.wangliqiu.servicehi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.sleuth.sampler.AlwaysSampler;
 import org.springframework.context.annotation.Bean;
 
@@ -20,6 +21,7 @@ import org.springframework.context.annotation.Bean;
 /* This looks for implementations of the DiscoveryClient interface via META-INF/spring.factories. Implementations of Discovery Client
 will add a configuration class to spring.factories under the org.springframework.cloud.client.discovery.EnableDiscoveryClient key. */
 // @EnableDiscoveryClient
+@EnableHystrix
 @SpringBootApplication
 public class ServiceHiApplication {
 

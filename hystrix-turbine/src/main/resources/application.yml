@@ -1,0 +1,31 @@
+server:
+  port: 9962
+
+security.basic.enabled: false
+
+
+# turbine要通过eureka来获取应用监控/hystrix.stream地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://dns1:9901/eureka/
+
+
+turbine:
+  combineHostPort: false
+  # 表明turbine从Eureka server的serviceId列表中获取哪些应用的信息，然后再aggregator
+  appConfig: service-hi,service-oh
+  # aggregator.clusterConfig会采用此表达式计算clusterName
+  # 默认为EurekaInstanceDiscovery的EUREKA_DEFAULT_CLUSTER_NAME_EXPRESSION，即appName，即直接取service-id，clusterConfig要写service-id
+  clusterNameExpression: "'default'"
+#  aggregator:
+#    # 指定聚合哪些集群，多个clusterName使用","分割，默认为default。可使用http://.../turbine.stream?cluster={clusterConfig之一}访问
+#    clusterConfig:
+
+
+  # 当new String("default")，turbine.aggregator.clusterConfig可以不写，因为默认就是default
+  #  metadata['cluster']时，假设想要监控的应用配置了eureka.instance.metadata-map.cluster: ABC，则需要配置，同时turbine.aggregator.clusterConfig: ABC
+
+spring:
+  application:
+    name: hystrix-turbine

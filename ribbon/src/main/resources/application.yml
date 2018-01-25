@@ -28,7 +28,7 @@ feign:
 
 # 默认NONE，自定义对应的类的日志层级
 logging.level:
-  com.wangliqiu.ribbon.service.FeignService: BASIC
+  com.wangliqiu.ribbon.service: FULL
 
 
 spring:

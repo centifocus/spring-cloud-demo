@@ -23,7 +23,7 @@ public class RibbonServiceImpl {
 
 
 	public String fallback(String name) {
-		return "hi," + name + " fallback!";
+		return "hi-ribbon, " + name + " fallback!";
 	}
 
 }

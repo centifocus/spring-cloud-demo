@@ -17,6 +17,12 @@ eureka:
       defaultZone: http://dns1:9901/eureka/
 
 
+# HystrixFeignConfiguration中需要该属性才启用HystrixFeign来包装feign接口的方法到hystrixCommand
+feign:
+  hystrix:
+    enabled: true
+
+
 spring:
   cloud:
     inetutils:

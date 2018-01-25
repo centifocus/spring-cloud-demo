@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class FeignServiceFallback implements FeignService {
 
 	public String hi(String name) {
-		return "hi " + name + " fallback!";
+		return "hi-feign, " + name + " fallback!";
 	}
 
 }

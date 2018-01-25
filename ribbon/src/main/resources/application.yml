@@ -18,7 +18,17 @@ eureka:
 
 
 # HystrixFeignConfiguration中需要该属性才启用HystrixFeign来包装feign接口的方法到hystrixCommand
-feign.hystrix.enabled: true
+feign:
+  hystrix.enabled: true
+  # GZIP compression for Feign
+  compression:
+    request.enabled: true
+    response.enabled: true
+
+
+# 默认NONE，自定义对应的类的日志层级
+logging.level:
+  com.wangliqiu.ribbon.service.FeignService: BASIC
 
 
 spring:

@@ -1,10 +1,6 @@
 server:
   port: 9949
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://dns1:9901/eureka/    # eureka server url to communicate
 
 spring:
   application:

@@ -1,12 +1,13 @@
 package com.wangliqiu.serviceoh.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * http://localhost:8762/hi?name=wangliqiu
+ * http://localhost:9949/oh?name=wangliqiu
  */
 @RestController
 public class OhController {
@@ -15,9 +16,15 @@ public class OhController {
 	String port;
 
 
-	@RequestMapping("/hi")
-	public String hi(@RequestParam String name) {
-		return "oh " + name + ",i am from port:" + port;
+	@HystrixCommand(fallbackMethod = "fallback")
+	@RequestMapping("/oh")
+	public String oh(@RequestParam String name) {
+		return "oh " + name + ", port:" + port;
+	}
+
+
+	public String fallback() {
+		return "service-hi:" + port + " fallback!";
 	}
 
 }

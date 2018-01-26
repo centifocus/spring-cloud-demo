@@ -16,9 +16,6 @@ spring:
     host: 10.10.110.49
     port: 5672
 
-  zipkin:
-    storage:
-      type: mysql
 
   application:
     name: sleuth

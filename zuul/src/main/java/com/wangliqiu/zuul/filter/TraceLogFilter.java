@@ -35,7 +35,7 @@ public class TraceLogFilter extends ZuulFilter {
 
 
 	public Object run() {
-		tracer.addTag("filter", "TraceFilter");
+		tracer.addTag("filter", TraceLogFilter.class.getSimpleName());
 		System.out.print("traceId: " + tracer.getCurrentSpan().traceIdString());
 
 		return null;

@@ -13,9 +13,20 @@ zuul:
       serviceId: ribbon
     api-oh:
       path: /oh/**
-      serviceId: feign
+      serviceId: service-oh
 
 spring:
+  rabbitmq:
+    virtual-host: /UAT
+    username: admin
+    password: adminjoindata123
+    host: 10.10.110.49
+    port: 5672
+
+  sleuth:
+    sampler:
+      percentage: 1.0
+
   application:
     name: zuul
 

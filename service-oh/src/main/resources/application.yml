@@ -3,5 +3,14 @@ server:
 
 
 spring:
+  zipkin:
+    base-url: http://localhost:9951
+    # 显示指定一下，否则classpath有rabbit，会采用rabbit
+    sender:
+      type: web
+
   application:
     name: service-oh
+
+
+

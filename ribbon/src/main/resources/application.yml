@@ -11,7 +11,9 @@ eureka:
   instance:
     metadata-map:
       zone: zone1
+
   client:
+    registry-fetch-interval-seconds: 5
     preferSameZoneEureka: true
     serviceUrl:
       defaultZone: http://dns1:9901/eureka/
@@ -43,12 +45,25 @@ spring:
       retry:
         enabled: true
 
+  rabbitmq:
+    virtual-host: /UAT
+    username: admin
+    password: adminjoindata123
+    host: 10.10.110.49
+    port: 5672
+
   zipkin:
-    base-url: http://localhost:9951       # zipkin 控制台
+#    base-url: http://localhost:9951    # 走rabbit就不用指定了
+    # 显示指定一下，否则classpath有rabbit，会采用rabbit
+    sender:
+      type: rabbit
 
   sleuth:
-      sampler:
-        percentage: 1.0     # 100%采样，默认10%；PercentageBasedSampler实现
+    sampler:
+      percentage: 1.0     # 100%采样，默认10%；PercentageBasedSampler实现
 
   application:
     name: ribbon
+
+
+

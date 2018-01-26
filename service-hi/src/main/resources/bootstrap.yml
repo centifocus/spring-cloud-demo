@@ -23,7 +23,7 @@ eureka:
 
 spring:
   rabbitmq:
-    virtual-host: /DEV
+    virtual-host: /UAT
     username: admin
     password: adminjoindata123
     host: 10.10.110.49
@@ -44,4 +44,11 @@ spring:
         service-id: config
 
   zipkin:
-    base-url: http://localhost:9951
+#    base-url: http://localhost:9951
+    # 显示指定一下，否则classpath有rabbit，会采用rabbit
+    sender:
+      type: rabbit
+
+  sleuth:
+    sampler:
+      percentage: 1.0

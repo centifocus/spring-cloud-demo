@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("/hi")
 public class ConsumerController {
 
 	@Autowired
@@ -18,7 +18,7 @@ public class ConsumerController {
 	/**
 	 * 交替显示 port:8762 、 port:8763 ，说明已经做了负载均衡。
 	 */
-	@GetMapping("/hi-ribbon")
+	@GetMapping("/ribbon")
 	public String hiRibbon(@RequestParam String name) {
 		return helloService.hiService(name);
 	}
@@ -29,7 +29,7 @@ public class ConsumerController {
 	private FeignService feignService;
 
 
-	@GetMapping("/hi-feign")
+	@GetMapping("/feign")
 	public String hiFeign(@RequestParam String name) {
 		return feignService.hi(name);
 	}

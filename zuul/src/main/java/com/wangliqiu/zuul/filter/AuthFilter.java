@@ -3,6 +3,7 @@ package com.wangliqiu.zuul.filter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,14 +13,14 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Component
 @Slf4j
-public class MyFilter extends ZuulFilter {
+public class AuthFilter extends ZuulFilter {
 
 	/**
 	 * "pre" for pre-routing filtering, "route" for routing to an origin, "post" for post-routing filters, "error" for error handling.
 	 * also support a "static" type for static responses see  StaticResponseFilter.
 	 */
 	public String filterType() {
-		return "pre";
+		return FilterConstants.PRE_TYPE;
 	}
 
 

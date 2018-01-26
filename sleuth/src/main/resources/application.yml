@@ -2,8 +2,6 @@ server:
   port: 9951
 
 
-
-
 eureka:
   client:
     serviceUrl:
@@ -11,5 +9,16 @@ eureka:
 
 
 spring:
+  rabbitmq:
+    virtual-host: /UAT
+    username: admin
+    password: adminjoindata123
+    host: 10.10.110.49
+    port: 5672
+
   application:
     name: sleuth
+
+
+
+

@@ -17,14 +17,13 @@ turbine:
   appConfig: service-oh,service-hi
   # aggregator.clusterConfig会采用此表达式计算clusterName
   # 默认为EurekaInstanceDiscovery的EUREKA_DEFAULT_CLUSTER_NAME_EXPRESSION，即appName，即直接取service-id，clusterConfig要写service-id
+  # 设置"'default'"，则aggregator.clusterConfig可以不写，其默认为default（所有服务节点的clusterName默认为default），
+  # 设置metadata['cluster']，即取服务节点的eureka.instance.metadata-map.cluster，则要设置aggregator.clusterConfig为相应值
   clusterNameExpression: metadata['cluster']
   aggregator:
-    # 指定聚合哪些集群，多个clusterName使用","分割，默认为default。可使用http://.../turbine.stream?cluster={clusterConfig之一}访问
-    clusterConfig: cluster1
+    # 指定聚合哪些集群，多个clusterName使用","分割。可使用http://.../turbine.stream?cluster={clusterConfig之一}访问
+     clusterConfig: cluster1
 
-
-  # 当"'default'"，turbine.aggregator.clusterConfig可以不写，因为默认就是default
-  #  metadata['cluster']时，假设想要监控的应用配置了eureka.instance.metadata-map.cluster: ABC，则需要配置，同时turbine.aggregator.clusterConfig: ABC
 
 spring:
   application:

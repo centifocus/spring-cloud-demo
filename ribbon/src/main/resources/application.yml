@@ -46,5 +46,9 @@ spring:
   zipkin:
     base-url: http://localhost:9951       # zipkin 控制台
 
+  sleuth:
+      sampler:
+        percentage: 1.0     # 100%采样，默认10%；PercentageBasedSampler实现
+
   application:
     name: ribbon

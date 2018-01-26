@@ -1,2 +1,15 @@
 server:
   port: 9951
+
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://dns1:9901/eureka/
+
+
+spring:
+  application:
+    name: sleuth

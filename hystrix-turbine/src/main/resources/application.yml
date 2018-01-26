@@ -12,9 +12,10 @@ eureka:
 
 
 turbine:
-  combineHostPort: false
+  # 以host-port来合并信息，若false，则以host，会合并相同host的信息
+  combine-host-port: true
   # 表明turbine从Eureka server的serviceId列表中获取哪些应用的信息，然后再aggregator
-  appConfig: service-oh,service-hi
+  appConfig: service-hi,service-oh
   # aggregator.clusterConfig会采用此表达式计算clusterName
   # 默认为EurekaInstanceDiscovery的EUREKA_DEFAULT_CLUSTER_NAME_EXPRESSION，即appName，即直接取service-id，clusterConfig要写service-id
   # 设置"'default'"，则aggregator.clusterConfig可以不写，其默认为default（所有服务节点的clusterName默认为default），

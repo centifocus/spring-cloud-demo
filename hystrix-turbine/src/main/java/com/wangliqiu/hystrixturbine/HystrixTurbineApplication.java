@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
 /**
- * todo 聚合只会显示第一个？？？
+ *
  */
 // 包含@EnableDiscoveryClient功能，从注册中心获取
 @EnableTurbine
